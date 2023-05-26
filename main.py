@@ -54,8 +54,8 @@ if x==3:
 
 #7.4
 def f4():
-    image = cv2.imread('image.png')
-    watermark = cv2.imread('watermark.png', cv2.IMREAD_UNCHANGED)
+    image = cv2.imread('img.jpg')
+    watermark = cv2.imread('watermark.jpg', cv2.IMREAD_UNCHANGED)
 
     (wH, wW) = watermark.shape[:2]
     weight = 1 - watermark[:, :, 3] / 255
@@ -70,7 +70,7 @@ def f4():
         np.uint8)
     output = cv2.addWeighted(image[num1:num1 + wH, num2:num2 + wW], 1, watermark[:, :, 0:3], 1, 1)
     image[num1:num1 + wH, num2:num2 + wW] = output
-    cv2.imwrite("watermark3.png", image)
+    cv2.imwrite("watermark3.jpg", image)
 if x==4:
     f4()
 if x< 0 or x > 4:
