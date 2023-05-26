@@ -54,6 +54,7 @@ if x==3:
 
 #7.4
 def f4():
+    import cv2
     image = cv2.imread('img.jpg')
     watermark = cv2.imread('watermark.jpg', cv2.IMREAD_UNCHANGED)
 
